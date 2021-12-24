@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700&display=swap');
+    *{font-size: 18px;font-family: 'Barlow',sans-serif; }
+    .header-image img{width: 100vw;height: 100vh;position: absolute;z-index: -1;overflow: hidden;}
+    .navbar{display: flex;flex-direction: row;padding-top: 3%;}
+    .navbar h1{color: white;display: inline-block;margin-left: 1em;}
+    .nav-items a{margin-left: 2em;margin-right: 2em;text-decoration: none;color: white;}
+    .nav-items li:hover{background-color: hsl(198, 62%, 26%);border: 1px solid transparent;border-radius: 50px;}
+    ul{list-style-type: none; display: flex;flex-direction: row;}
+   .hamburger{background-color: transparent;border: none;color: white;display: none;} 
+    .header h2{font-family: 'Fraunces',sans-serif;color: white;text-align: center;margin-top: 5%;font-size: 44px;word-spacing: 0.5em;}
+    .arrow{margin-left: 50vw;margin-top: 5%;}
+    .transform{width: 100vw;display: flex;flex-direction: row;margin-top:17.1em;overflow: hidden;}
+    .content{width: 50%;}
+    .transform-image{width: 50vw;}
+    .transform-image img{width: 50vw;}
+    h3{color: black;font-size: 2em;margin-top: 4em;text-align: center;font-family: 'Fraunces',sans-serif;}
+    p{color:hsl(210, 4%, 67%);margin-left: 30%;margin-top: 2em;}
+    .content a{text-decoration: none;color: black;margin-left: 30%;border-bottom: 3px solid  hsl(51, 100%, 49%);}
+    .audience{display: flex;flex-direction: row;width: 100vw;overflow: hidden;}
+    .aud-image{width: 50%;}
+    .aud-image img{width: 50vw;}
+    .audience a{border-bottom: 3px solid hsl(7, 99%, 70%);}
+    .bottom{width: 100vw;display: flex;flex-direction: row;overflow: hidden;}
+    .bottom img{position: absolute;z-index: -1;width: 50vw;}
+    .graphic{width: 50%;}
+    .graphic h3{color:hsl(167, 40%, 24%);margin-top: 55%;}
+    .graphic p{color: hsl(167, 40%, 24%);}
+    .photography{width: 50%;}
+    .photography h3{color:  hsl(198, 62%, 26%);margin-top: 55%;}
+    .photography p{color: hsl(198, 62%, 26%);}
+    .clients{width: 100vw;margin-top: 5em;overflow: hidden;}
+    .clients h3{font-size: 24px;letter-spacing: 0.5ch;margin-bottom: 1em;margin-top: 4em;text-align: center;color:hsl(232, 10%, 55%);font-family: 'Fraunces';}
+    .tests{width: 100vw;display: flex;flex-direction: row;margin-left: 5%;overflow: hidden;}
+    .tests div{width: 30vw;margin-top: 2em;}
+    .tests img{border: 1px solid white;border-radius: 50%;height: 70px;width: 70px;margin-left: 40%;}
+    .tests p{text-align: center;margin-left: 10%;color:  hsl(213, 9%, 39%)}
+    .tests h4{text-align: center;font-family: 'Fraunces',sans-serif;margin-bottom: 0%;font-size: 20px;}
+    .tests .job{margin-top: 0%;color: hsl(210, 4%, 67%);margin-left: 5%;}
+    .images{width: 100vw;display: flex;flex-direction: row;margin-top: 8em;overflow: hidden;}
+    .images img{width: 25vw;}
+    .footer{width: 100vw;background-color: hsl(168, 34%, 41%);display: flex;flex-direction: column;overflow: hidden;}
+    .footer h3{margin-top:0em;color: hsl(167, 40%, 24%);padding-top: 1em;}
+    .footer div{margin-left: 40%;margin-top: 2em;}
+    .footer a{margin-left: 3em;text-decoration: none;color: hsl(167, 40%, 24%);margin-bottom: 2em;}
+    .footer a:hover{color: white;}
+    .footer img{margin-left: 3em;margin-bottom: 4em;margin-top: 2em;}
+    .footer img:hover{background-color: white;cursor: pointer;}
+    @media screen and (max-width:767px) {
+      .nav-items ul{display: none;background-color: white;}
+      .nav-items ul.show{margin-top: 10%;position:absolute;top:2em;left: 10vw;display: flex;flex-direction: column;border: 3px solid white;border-radius: 10px;padding:0%;transition: all 0.4s;}
+      .nav-items a{color: hsl(210, 4%, 67%);transition: all 0.4s;}
+      .nav-items a:hover{color: black;}
+      .nav-items li{margin-top: 1em;margin-bottom: 1em;margin-left: 4em;margin-right: 4em;}
+      .nav-items li:hover{background-color: hsl(51, 100%, 49%);border: 1px solid grey;border-radius: 60px;}
+      .hamburger {display: block;}
+      .transform{flex-direction: column;}
+      .audience{flex-direction: column;}
+      .content{width: 100vw;order: 2;}
+      .content p{display: block;float: left;margin-left: 0.5em;}
+      .transform-image{width: 100vw;margin-top: 2.2;margin-left: 0%;}
+      .transform-image img{width: 100vw;order: 1;}
+      .aud-image{width: 100vw;margin-top: 8%;}
+      .aud-image img{width: 100vw;}
+      .bottom{flex-direction: column;margin-top: 5%;}
+      .bottom p{display: block;float: left;margin-left: 3em;}
+      .bottom img{width: 100vw;height: 100%;}
+      .graphic{width: 100vw;}
+      .photography{width: 100vw;}
+      .photography img{height: 600px;}
+      .clients{margin-top: 10em;}
+      .tests{flex-direction: column;}
+      .tests div{width: 100vw;}
+      .tests p,h4{margin-left: 0%;}
+      .images{flex-wrap: wrap;}
+      .images img{width: 50vw;}
+      .footer div{margin-left: 10%;}
+
+
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class='header'>
+    <div class='header-image'>
+      <img srcset="./images/mobile/image-header.jpg 750w,./images/desktop/image-header.jpg 2880w" sizes="(max-width:600px) 100vw,100vw" src="./images/desktop/image-header.jpg" alt="header image">
+    </div>
+    <div class='navbar'>
+      <h1>sunnyside</h1>
+      <div class='nav-items'>
+        <button class='hamburger' id='hamburger'><img src="./images/icon-hamburger.svg" alt='hamburger menu img'></button>
+        <ul id='nav-ul'>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <h2>WE ARE CREATIVES</h2>
+    <img class='arrow' src="./images/icon-arrow-down.svg" alt="Arrow down icon">
+  </div>
+  <div class='transform'>
+    <div class='content'>
+      <h3>Trasform your <br>brand</h3>
+      <p>We are a full service creative agency specializing in <br>helping brands grow fast.Engage your clients through <br> compelling visuals that do most of the marketing for you.</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class='transform-image'>
+      <img  src="./images/desktop/image-transform.jpg" alt="transform image">
+    </div>
+  </div>
+  <div class='audience'>
+    <div class='aud-image'>
+      <img src="./images/desktop/image-stand-out.jpg" alt="Stand out audience image">
+    </div>
+    <div class='content'>
+      <h3>Stand out to the right <br>audience</h3>
+      <p>Using a collabrative formula of designers,researchers,<br>photographers,videographers and copywriters, we'll <br>build and extend your brand in digital places.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+  <div class='bottom'>
+    <div class='graphic'>
+      <img src="./images/desktop/image-graphic-design.jpg" alt="graphic design image">
+      <h3>Graphic Design</h3>
+      <p>Great design makes you memorable.We deliver <br> artwork that underscores your brand message <br> and captures potential clients' attention.</p>
+    </div>
+    <div class='photography'>
+      <img src="./images/desktop/image-photography.jpg" alt="photography image">
+      <h3>Photography</h3>
+      <p>Increase your crediblity by getting the most <br> stunning, high quality photos that imporve your <br> buisness image.</p>
+    </div>
+  </div>
+  <div class='clients'>
+    <h3>Client Testimonials</h3>
+    <div class='tests'>
+      <div class='emily'>
+        <img src="./images/image-emily.jpg" alt="emily profile pic">
+        <p>We put our trust on sunnyside and they <br>delivered,making sure our needs were met <br> and deadlines were always hit.</p>
+        <h4>Emily R.</h4>
+        <p class='job'>Marketing Director</p>
+      </div>
+      <div class='thomas'>
+        <img src="./images/image-thomas.jpg" alt="thoams profile pic">
+        <p>Sunnyside's enthusiasm coupled with their <br> keen interest in our brand's success made it <br> a satisfying and enjoyable experience.</p>
+        <h4>Thomas S.</h4>
+        <p class='job'>Chief Operating Officer</p>
+      </div>
+      <div class='jenny'>
+        <img src="./images/image-jennie.jpg" alt="jennie profile pic">
+        <p>Incredible end result! Our sales increased <br> over 400% When we worked with Sunnyside. <br>Highly recommended!</p>
+        <h4>Jennie F.</h4>
+        <p class='job'>Buisness Owner</p>
+      </div>
+    </div>
+  </div>
+  <div class='images'>
+    <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="milkbottles">
+    <img src="./images/desktop/image-gallery-orange.jpg" alt="orange">
+    <img src="./images/desktop/image-gallery-cone.jpg" alt="cone">
+    <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="sugarcubes">
+  </div>
+  <div class='footer'>
+    <h3>sunnyside</h3>
+    <div>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+    </div>
+    <div>
+      <img src="./images/icon-facebook.svg" alt="fb">
+      <img src="./images/icon-instagram.svg" alt="Insta">
+      <img src="./images/icon-twitter.svg" alt="twitter">
+      <img src="./images/icon-pinterest.svg" alt="pinterest">
+    </div>
+    
+   
+  </div>
+
+  
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Rahul Solanki</a> .
+  </div> 
+  <script>
+    var hamburger=document.getElementById('hamburger');
+    var links=document.getElementById('nav-ul');
+    hamburger.addEventListener('click',()=>{
+      links.classList.toggle('show');
+    })
+  </script>
+</body>
+</html>
